@@ -12,11 +12,25 @@ def listar_contatos():
 
 
 def buscar_contato():
-    pass
+    nome = input("Digite o nome do contato que deseja buscar: ")
+    for contato in contatos:
+        if contato["nome"] == nome:
+            print("Contato encontrado:")
+            print("Nome:", contato["nome"])
+            print("Telefone:", contato["telefone"])
+            print("Email:", contato["email"])
+            return
+    print("Contato não encontrado.")
 
 
 def remover_contato():
-    pass
+    nome = input("Digite o nome do contato que deseja remover: ")
+    for contato in contatos:
+        if contato["nome"] == nome:
+            contatos.remove(contato)
+            print("Contato removido com sucesso.")
+            return
+    print("Contato não encontrado.")
 
 
 while True:
