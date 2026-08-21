@@ -4,11 +4,20 @@ contatos = []
 
 
 def cadastrar_contato():
-    pass
+    nome = input("Nome: ")
+    telefone = input("Telefone: ")
+    email = input("Email: ")
+    contato = {"nome": nome, "telefone": telefone, "email": email}
+    contatos.append(contato)
+    print("Contato cadastrado com sucesso!")
 
 
 def listar_contatos():
-    pass
+    if not contatos:
+        print("Nenhum contato cadastrado.")
+        return
+    for indice, contato in enumerate(contatos, start=1):
+        print(f"{indice}. {contato['nome']} - {contato['telefone']} - {contato['email']}")
 
 
 def buscar_contato():
@@ -55,4 +64,3 @@ while True:
         break
     else:
         print("Opção inválida.")
-        
